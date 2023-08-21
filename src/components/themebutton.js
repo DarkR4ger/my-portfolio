@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import useThemeSwitcher from "./hooks/useThemeSwitcher";
 
 export default function ThemeButton({ mode, setMode }) {
 

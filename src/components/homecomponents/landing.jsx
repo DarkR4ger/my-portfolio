@@ -39,8 +39,8 @@ export default function Landing() {
     smooth: 1
   })
   const smooth = useSpring(scrollYProgress)
-  const y = useTransform(smooth, [0, 1], [0, 300])
-  const strokeDashOffset = useTransform(smooth, [0, 1], [1000, 2000])
+  const y = useTransform(smooth, [0, 1], [0, 200])
+  const strokeDashOffset = useTransform(smooth, [0, 1], [1000, 5000])
 
   // const animate = () => {
   //   if (xPercent < -100) {
@@ -84,7 +84,7 @@ export default function Landing() {
         </div>*/}
         <svg className="md:w-[41px] w-7" height={100} viewBox="0 0 247 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fillRule="evenodd" clipRule='evenodd' strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={1.5} >
           <motion.path style={{ translateY: y }} transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }} ref={wheel} id="wheels" d="M123.359,79.775l0,72.843" fill="none" stroke="#EF4444" strokeWidth={20} />
-          <motion.path ref={mouse} style={{ strokeDasharray: 50, strokeDashoffset: strokeDashOffset }} id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z" fill="none" stroke="#EF4444" strokeWidth={20} />
+          <motion.path ref={mouse} style={{ strokeDasharray: 560, strokeDashoffset: strokeDashOffset }} id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z" fill="none" stroke="#EF4444" strokeWidth={20} />
         </svg>
       </section >
     </div >
