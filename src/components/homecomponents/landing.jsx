@@ -64,10 +64,10 @@ export default function Landing() {
       <section className="h-full flex flex-col justify-center items-center md:flex-row">
         <div className="">
           <div className="text-xl">
-            <p>Hi There!, I'am <span className="text-red-500 font-semibold">Gowtham</span></p>
+            <p>Hi There!, I&apos;am <span className="text-red-500 font-semibold">Gowtham</span></p>
           </div>
           <div className="text-xl">
-            <p>A Result's driven <span className="text-3xl text-red-500 font-semibold">FrontEnd Engineer</span></p>
+            <p>A Result&apos;s driven <span className="text-3xl text-red-500 font-semibold">FrontEnd Engineer</span></p>
           </div>
         </div>
         <div>
