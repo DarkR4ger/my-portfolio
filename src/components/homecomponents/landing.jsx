@@ -1,21 +1,19 @@
 import { useEffect, useRef } from "react";
-import { gsap } from 'gsap/dist/gsap'
+import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import Picture from "../../../public/images/programming-animate.svg";
 
-
-let xPercent = 0
-let direction = -1
+let xPercent = 0;
+let direction = -1;
 
 export default function Landing() {
-
   // const firstText = useRef(null);
   // const secondText = useRef(null);
   // const slider = useRef(null);
-  const wheel = useRef(null)
-  const mouse = useRef(null)
-
+  const wheel = useRef(null);
+  const mouse = useRef(null);
 
   useEffect(() => {
     // gsap.registerPlugin(ScrollTrigger)
@@ -31,16 +29,15 @@ export default function Landing() {
     // })
     // requestAnimationFrame(animate)
     //
-
-  }, [])
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: wheel.current,
-    smooth: 1
-  })
-  const smooth = useSpring(scrollYProgress)
-  const y = useTransform(smooth, [0, 1], [0, 200])
-  const strokeDashOffset = useTransform(smooth, [0, 1], [1000, 5000])
+    smooth: 1,
+  });
+  const smooth = useSpring(scrollYProgress);
+  const y = useTransform(smooth, [0, 1], [0, 200]);
+  const strokeDashOffset = useTransform(smooth, [0, 1], [1000, 5000]);
 
   // const animate = () => {
   //   if (xPercent < -100) {
@@ -55,23 +52,34 @@ export default function Landing() {
   //   xPercent += 0.1 * direction
   // }
 
-
-
-
-
   return (
     <div className="container relative h-screen pt-20 flex flex-col overflow-hidden">
-      <section className="h-full flex flex-col justify-center items-center md:flex-row">
-        <div className="">
-          <div className="text-xl">
-            <p>Hi There!, I&apos;am <span className="text-red-500 font-semibold">Gowtham</span></p>
+      <section className="h-full m-4 flex flex-col justify-center items-center md:flex-row">
+        <div className="mt-10 text-center md:text-left">
+          <div className="text-xl md:text-2xl">
+            <p>
+              Hi There!, I&apos;am{" "}
+              <span className="text-red-500 font-semibold">Gowtham</span>
+            </p>
           </div>
-          <div className="text-xl">
-            <p>A Result&apos;s driven <span className="text-3xl text-red-500 font-semibold">FrontEnd Engineer</span></p>
+          <div className="text-xl md:text-4xl">
+            <p>
+              A Result&apos;s driven{" "}
+              <span className="text-3xl md:text-6xl text-red-500 font-semibold">
+                FrontEnd Engineer
+              </span>
+            </p>
           </div>
         </div>
-        <div>
-          <Image priority src='/images/programming-animate.svg' alt='svg' width={300} height={300} className="md:w-[250] md:h-[250] w-150 h-150" ></Image>
+        <div className="relative w-full h-full mt-20 md:mt-0 md:max-w-md lg:max-w-lg xl:max-w-xl">
+          <Image
+            src={Picture}
+            alt="svg"
+            fill={true}
+            // width={1000}
+            // height={800}
+            className="rounded-md"
+          ></Image>
         </div>
       </section>
       <section className="relative flex flex-col justify-center items-center">
@@ -82,12 +90,40 @@ export default function Landing() {
           </div>
 
         </div>*/}
-        <svg className="md:w-[41px] w-7" height={100} viewBox="0 0 247 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fillRule="evenodd" clipRule='evenodd' strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={1.5} >
-          <motion.path style={{ translateY: y }} transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }} ref={wheel} id="wheels" d="M123.359,79.775l0,72.843" fill="none" stroke="#EF4444" strokeWidth={20} />
-          <motion.path ref={mouse} style={{ strokeDasharray: 560, strokeDashoffset: strokeDashOffset }} id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z" fill="none" stroke="#EF4444" strokeWidth={20} />
+        <svg
+          className="md:w-[41px] w-7"
+          height={100}
+          viewBox="0 0 247 390"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          fillRule="evenodd"
+          clipRule="evenodd"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit={1.5}
+        >
+          <motion.path
+            style={{ translateY: y }}
+            transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+            ref={wheel}
+            id="wheels"
+            d="M123.359,79.775l0,72.843"
+            fill="none"
+            stroke="#EF4444"
+            strokeWidth={20}
+          />
+          <motion.path
+            ref={mouse}
+            style={{ strokeDasharray: 560, strokeDashoffset: strokeDashOffset }}
+            id="mouse"
+            d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z"
+            fill="none"
+            stroke="#EF4444"
+            strokeWidth={20}
+          />
         </svg>
-      </section >
-    </div >
-  )
-
+      </section>
+    </div>
+  );
 }
