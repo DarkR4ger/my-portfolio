@@ -47,9 +47,9 @@ export default function About() {
 
 
   return (
-    <div className="container h-screen md:mt-[200px] mt-20 flex flex-col">
+    <div className="container h-screen md:mt-[200px] mt-10 flex flex-col">
       <section ref={desc} className=" relative m-2">
-        <p className="relative text-2xl md:text-4xl font-light">
+        <p className="relative text-xl md:text-4xl font-light">
           {
             phrase.split(' ').map((word, index) => {
               return (
@@ -61,7 +61,7 @@ export default function About() {
           }
         </p>
       </section>
-      <section className="mt-[100px] relative flex text-red-500 text-[80px] md:text-[200px] overflow-hidden ">
+      <section className="mt-[50px] relative  flex text-red-500 text-[80px] md:text-[200px] overflow-hidden ">
         <div ref={slider} className="relative whitespace-nowrap ">
           <p ref={ftext} className="relative uppercase pr-[50px]">Love what you do -</p>
           <p ref={stext} className="absolute left-full top-0 uppercase pr-[50px] m-0">love what you do -</p>

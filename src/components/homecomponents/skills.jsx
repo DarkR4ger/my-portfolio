@@ -21,9 +21,9 @@ export default function Skill() {
   return (
     <div className="container h-screen  flex flex-col items-center">
       <div>
-        <h2 className="text-2xl md:text-7xl text-red-500">Skills I Know</h2>
+        <h2 className="text-4xl md:text-7xl text-red-500">Skills I Know</h2>
       </div>
-      <div className=" relative mt-20 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-5 items-center">
+      <div className=" relative mt-20 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-5 items-center">
         <Box src='/file-type-html.svg' name='HTML' index={10} />
         <Box src='/file-type-css.svg' name='css' index={15} />
         <Box src='/file-type-tailwind.svg' name='tailwind' index={20} />
