@@ -5,52 +5,20 @@ import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Picture from "../../../public/images/programming-animate.svg";
 
-let xPercent = 0;
-let direction = -1;
 
 export default function Landing() {
-  // const firstText = useRef(null);
-  // const secondText = useRef(null);
-  // const slider = useRef(null);
   const wheel = useRef(null);
   const mouse = useRef(null);
 
-  useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger)
-    // gsap.to(slider.current, {
-    //   scrollTrigger: {
-    //     trigger: document.documentElement,
-    //     scrub: 0.5,
-    //     start: 0,
-    //     end: window.innerHeight,
-    //     onUpdate: e => direction = e.direction * -1
-    //   },
-    //   x: '-200px',
-    // })
-    // requestAnimationFrame(animate)
-    //
-  }, []);
 
   const { scrollYProgress } = useScroll({
     target: wheel.current,
     smooth: 1,
   });
   const smooth = useSpring(scrollYProgress);
-  const y = useTransform(smooth, [0, 1], [0, 200]);
+  const y = useTransform(smooth, [0, 1], [0, 300]);
   const strokeDashOffset = useTransform(smooth, [0, 1], [1000, 5000]);
 
-  // const animate = () => {
-  //   if (xPercent < -100) {
-  //     xPercent = 0
-  //   }
-  //   else if (xPercent > 0) {
-  //     xPercent = -100;
-  //   }
-  //   gsap.set(firstText.current, { xPercent: xPercent })
-  //   gsap.set(secondText.current, { xPercent: xPercent })
-  //   requestAnimationFrame(animate)
-  //   xPercent += 0.1 * direction
-  // }
 
   return (
     <div className="container relative h-screen pt-20 flex flex-col overflow-hidden">
@@ -76,20 +44,11 @@ export default function Landing() {
             src={Picture}
             alt="svg"
             fill={true}
-            // width={1000}
-            // height={800}
             className="rounded-md"
           ></Image>
         </div>
       </section>
       <section className="relative flex flex-col justify-center items-center">
-        {/*<div className="absolute -top-[290px]">
-          <div ref={slider} className="relative whitespace-nowrap">
-            <p ref={firstText} className="relative m-0 text-red-500 text-[200px] font-medium pr-[50px]">Love What You Do -</p>
-            <p ref={secondText} className="absolute left-full top-0 m-0 text-red-500 text-[200px] font-medium pr-[50px]">Love What You Do -</p>
-          </div>
-
-        </div>*/}
         <svg
           className="md:w-[41px] w-7"
           height={100}

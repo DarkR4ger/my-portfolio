@@ -11,3 +11,17 @@ export const slideUp = {
     transition: { duration: 0.5 }
   })
 }
+
+export const slider = {
+  animate: (i) => ({
+    x: [0, (i * -1035)],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 4,
+        ease: 'linear'
+      },
+    },
+  })
+}
