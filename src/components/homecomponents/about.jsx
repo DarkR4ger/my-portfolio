@@ -1,8 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { slideUp, slider } from "./aboutanim";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import SlideTextUp from "../slideuptext";
 
 
 let xPercent = 0
@@ -17,7 +18,7 @@ export default function About() {
   const slider = useRef(null)
   const isInView = useInView(desc)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.to(slider.current, {
       scrollTrigger: {
@@ -47,20 +48,8 @@ export default function About() {
 
 
   return (
-    <div className="container h-screen md:mt-[200px] mt-10 flex flex-col">
-      <section ref={desc} className=" relative m-2">
-        <p className="relative text-xl md:text-4xl font-light">
-          {
-            phrase.split(' ').map((word, index) => {
-              return (
-                <span key={index} className="relative inline-flex overflow-hidden mr-1">
-                  <motion.span custom={index} variants={slideUp} initial='initial' animate={isInView ? 'open' : 'close'} className={`mr-1 ${index == 7 || index == 3 ? 'text-red-500 font-normal ' : ''}`} >{word}</motion.span>
-                </span>
-              )
-            })
-          }
-        </p>
-      </section>
+    <div className="h-screen md:mt-[200px] mt-10 flex flex-col">
+      <SlideTextUp phrase={phrase} className='text-xl md:text-4xl font-light' />
       <section className="mt-[50px] relative  flex text-red-500 text-[80px] md:text-[200px] overflow-hidden ">
         <div ref={slider} className="relative whitespace-nowrap ">
           <p ref={ftext} className="relative uppercase pr-[50px]">Love what you do -</p>

@@ -1,6 +1,4 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Picture from "../../../public/images/programming-animate.svg";
@@ -13,7 +11,7 @@ export default function Landing() {
 
   const { scrollYProgress } = useScroll({
     target: wheel.current,
-    smooth: 1,
+    offset: ['start', 'end end']
   });
   const smooth = useSpring(scrollYProgress);
   const y = useTransform(smooth, [0, 1], [0, 300]);
@@ -21,7 +19,7 @@ export default function Landing() {
 
 
   return (
-    <div className="container relative h-screen pt-20 flex flex-col overflow-hidden">
+    <div className="relative h-screen pt-20 flex flex-col overflow-hidden">
       <section className="h-full m-4 flex flex-col justify-center items-center md:flex-row">
         <div className="mt-10 text-center md:text-left">
           <div className="text-xl md:text-2xl">
@@ -41,6 +39,7 @@ export default function Landing() {
         </div>
         <div className="relative w-full h-full mt-20 md:mt-0 md:max-w-md lg:max-w-lg xl:max-w-xl">
           <Image
+            priority
             src={Picture}
             alt="svg"
             fill={true}
