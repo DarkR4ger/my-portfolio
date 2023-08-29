@@ -1,7 +1,7 @@
 import About from "@/components/homecomponents/about";
 import Landing from "@/components/homecomponents/landing";
 import Skill from "@/components/homecomponents/skills";
-import TransitionEffect from "@/components/transition";
+import Layout from "@/components/layouts/article";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -13,15 +13,10 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <TransitionEffect />
-      <main className="dark:bg-dark dark:text-light">
-        <Landing />
-        <About />
-        <Skill />
-        <div className="min-h-screen"></div>
-        <div className="min-h-screen"></div>
-      </main>
-    </>
+    <Layout title='Home'>
+      <Landing />
+      <About />
+      <Skill />
+    </Layout>
   );
 }
