@@ -1,9 +1,10 @@
-import { motion, useInView } from "framer-motion";
-import { slideUp, slider } from "./aboutanim";
+import { useInView } from "framer-motion";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SlideTextUp from "../slideuptext";
+import Rounded from "../rounded";
+import Link from "next/link";
 
 
 let xPercent = 0
@@ -12,11 +13,9 @@ let direction = -1
 export default function About() {
   const phrase =
     "I'am a passionate mechanical engineer turned aspiring frontend engineer. My journey began in the world of mechanical systems and design, where I honed my analytical thinking and problem-solving skills. However, as technology continued to reshape our world, I found myself increasingly drawn to the dynamic realm of frontend development.";
-  const desc = useRef(null)
   const ftext = useRef(null)
   const stext = useRef(null)
   const slider = useRef(null)
-  const isInView = useInView(desc)
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -50,12 +49,15 @@ export default function About() {
   return (
     <div className="h-screen md:mt-[200px] mt-10 flex flex-col">
       <SlideTextUp phrase={phrase} className='text-xl md:text-4xl font-light' />
-      <section className="mt-[50px] relative  flex text-red-500 text-[80px] md:text-[200px] overflow-hidden ">
+      <section className="mt-[50px] md:mt-[100px] relative  flex text-red-500 text-[80px] md:text-[200px] overflow-hidden ">
         <div ref={slider} className="relative whitespace-nowrap ">
           <p ref={ftext} className="relative uppercase pr-[50px]">Love what you do -</p>
           <p ref={stext} className="absolute left-full top-0 uppercase pr-[50px] m-0">love what you do -</p>
         </div>
       </section>
+      <div className="relative flex items-center justify-center mt-[100px]">
+        <Rounded><Link className="relative z-10" href='/about'>About me</Link></Rounded>
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import Footer from '../footer'
 
 const Main = ({ children, className }) => {
   return (
-    <main>
+    <main className='bg-light box-border text-dark dark:bg-dark dark:text-light'>
       <Head>
         <meta name='viewport' content="width=device-width,initial-scale=1" />
         <meta name='description' content="Gowtham's homepage" />
@@ -18,8 +18,8 @@ const Main = ({ children, className }) => {
       <Header />
       <div className={`bg-light text-dark dark:bg-dark dark:text-white ${className}`}>
         {children}
-        <Footer />
       </div>
+      <Footer />
     </main>
   )
 }
