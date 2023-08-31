@@ -1,6 +1,7 @@
 
 import { gsap } from 'gsap/dist/gsap'
 import { useEffect, useRef } from 'react'
+import Magnetic from './magnetic'
 
 export default function Rounded({ children, backgroundColor = '#ef4444', ...attributes }) {
 
@@ -28,10 +29,12 @@ export default function Rounded({ children, backgroundColor = '#ef4444', ...attr
   }
 
   return (
-    <div className="group rounded-[3em] border-[1px] cursor-pointer relative flex items-center justify-center p-[15px_60px_15px_60px] border-red-500" {...attributes} style={{ overflow: 'hidden' }} onMouseEnter={() => { manageMouseEnter() }} onMouseLeave={() => { manageMouseLeave() }}>
-      {children}
-      <div ref={circle} style={{ backgroundColor }} className="w-full h-[150%] absolute rounded-full top-full">
+    <Magnetic>
+      <div className="group rounded-[3em] border-[1px] cursor-pointer relative flex items-center justify-center p-[15px_60px_15px_60px] border-red-500" {...attributes} style={{ overflow: 'hidden' }} onMouseEnter={() => { manageMouseEnter() }} onMouseLeave={() => { manageMouseLeave() }}>
+        {children}
+        <div ref={circle} style={{ backgroundColor }} className="w-full h-[150%] absolute rounded-full top-full">
+        </div>
       </div>
-    </div>
+    </Magnetic>
   )
 }

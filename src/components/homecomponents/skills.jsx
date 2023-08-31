@@ -23,11 +23,11 @@ export default function Skill() {
 
 
   return (
-    <div className="h-screen flex flex-col items-center">
+    <div className="mt-[100px] md:mt-0 min-h-screen flex flex-col items-center">
       <div>
         <SlideTextUp phrase={phrase} mul={2} className="text-4xl md:text-7xl text-red-500" />
       </div>
-      <div className="mt-20 grid grid-cols-2 sm:grid-cols-3  xl:grid-cols-5 gap-5 items-center">
+      <div className="md:mt-20 grid grid-cols-2 sm:grid-cols-3  xl:grid-cols-5 gap-5 items-center">
         <Box src='/file-type-html.svg' name='HTML' index={10} />
         <Box src='/file-type-css.svg' name='css' index={15} />
         <Box src='/file-type-tailwind.svg' name='tailwind' index={20} />

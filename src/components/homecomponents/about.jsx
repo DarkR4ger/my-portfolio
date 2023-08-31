@@ -1,5 +1,4 @@
-import { useInView } from "framer-motion";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SlideTextUp from "../slideuptext";
@@ -17,6 +16,21 @@ export default function About() {
   const stext = useRef(null)
   const slider = useRef(null)
 
+  let animationFrameId = useRef(null);
+
+  const animate = () => {
+    if (xPercent < -100) {
+      xPercent = 0
+    }
+    else if (xPercent > 0) {
+      xPercent = -100
+    }
+    gsap.set(ftext.current, { xPercent: xPercent })
+    gsap.set(stext.current, { xPercent: xPercent })
+    animationFrameId.current = requestAnimationFrame(animate)
+    xPercent += 0.1 * direction;
+  }
+
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.to(slider.current, {
@@ -28,26 +42,18 @@ export default function About() {
       },
       x: "-500px"
     })
-    requestAnimationFrame(animate)
+    animationFrameId.current = requestAnimationFrame(animate)
+
+    return () => {
+      cancelAnimationFrame(animationFrameId.current);
+    }
 
   }, [])
 
-  const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0
-    }
-    else if (xPercent > 0) {
-      xPercent = -100
-    }
-    gsap.set(ftext.current, { xPercent: xPercent })
-    gsap.set(stext.current, { xPercent: xPercent })
-    requestAnimationFrame(animate)
-    xPercent += 0.1 * direction;
-  }
 
 
   return (
-    <div className="h-screen md:mt-[200px] mt-10 flex flex-col">
+    <div className="min-h-screen md:mt-[200px] mt-10 flex flex-col">
       <SlideTextUp phrase={phrase} className='text-xl md:text-4xl font-light' />
       <section className="mt-[50px] md:mt-[100px] relative  flex text-red-500 text-[80px] md:text-[200px] overflow-hidden ">
         <div ref={slider} className="relative whitespace-nowrap ">
@@ -55,7 +61,7 @@ export default function About() {
           <p ref={stext} className="absolute left-full top-0 uppercase pr-[50px] m-0">love what you do -</p>
         </div>
       </section>
-      <div className="relative flex items-center justify-center mt-[100px]">
+      <div className="relative flex items-center justify-center md:mt-[100px]">
         <Rounded><Link className="relative z-10" href='/about'>About me</Link></Rounded>
       </div>
     </div>

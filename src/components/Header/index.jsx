@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import ThemeButton from "../themebutton"
 import Magnetic from "../magnetic"
 import useThemeSwitcher from "../hooks/useThemeSwitcher"
+import Rounded from "../rounded"
 
 const outfit = Outfit({ subsets: ['latin'] })
 
@@ -63,9 +64,11 @@ export default function Header() {
           <div className="h-[7px] w-[7px] rounded-full bg-red-600"></div>
           <div onClick={() => setIsClicked(!isClicked)}>Menu</div>
         </div>
-        <div ref={ref} onClick={() => setIsClicked(!isClicked)} className={`fixed flex flex-col scale-0 gap-1 justify-center items-center m-5 p-2 right-0 md:right-10 hover:bg-red-500 transition-[background-color] duration-300 h-14 w-14 cursor-pointer rounded-full bg-gray-900 dark:bg-red-500 z-20 group ${isClicked ? 'bg-red-500 dark:bg-red-500 ' : ''} `}>
-          <span className={`relative h-[1px] w-[50%] bg-zinc-50 dark:bg-black ${isClicked ? 'rotate-45 top-[2px]' : ''} transition-transform ease-linear duration-200`}></span>
-          <span className={`relative h-[1px] w-[50%] bg-zinc-50 dark:bg-black ${isClicked ? '-rotate-45 -top-[3px]' : ''} transition-transform ease-linear duration-200`}></span>
+        <div ref={ref} onClick={() => setIsClicked(!isClicked)} className={`fixed flex flex-col scale-0 gap-1 justify-center items-center m-5 p-2 right-0 md:right-10 h-14 w-14 cursor-pointer drop-shadow-xl shadow-2xl  rounded-full bg-gray-900 dark:bg-light z-20 group ${isClicked ? 'bg-red-500 dark:bg-red-500  ' : ''} overflow-hidden `}>
+          <Rounded className={`h-20 w-20 rounded-full flex flex-col items-center justify-center gap-1 p-4  `}>
+            <span className={`relative  z-30 h-[1px] w-[50%] bg-zinc-50 dark:bg-black ${isClicked ? 'rotate-45 top-[2px]' : ''} transition-transform ease-linear duration-200`}></span>
+            <span className={`relative z-30 h-[1px] w-[50%] bg-zinc-50 dark:bg-black ${isClicked ? '-rotate-45 -top-[3px]' : ''} transition-transform ease-linear duration-200`}></span>
+          </Rounded>
         </div>
 
         <AnimatePresence mode='wait'>
