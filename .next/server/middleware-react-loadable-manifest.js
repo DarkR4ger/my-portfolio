@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"../components/layouts/article.js -> locomotive-scroll\":{\"id\":\"../components/layouts/article.js -> locomotive-scroll\",\"files\":[\"static/chunks/node_modules_locomotive-scroll_dist_locomotive-scroll_modern_mjs.js\"]}}"
