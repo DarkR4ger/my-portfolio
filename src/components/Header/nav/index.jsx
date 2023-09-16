@@ -29,7 +29,7 @@ const NavLinks = [
 
 export default function Nav({ setIsClicked, mode, setMode }) {
   return (
-    <motion.div variants={MenuSlideIn} initial='initial' animate='enter' exit='exit' className="fixed z-10 bg-dark text-zinc-50 dark:text-black dark:bg-light right-0 bottom-0 h-screen w-screen sm:w-[300px]">
+    <motion.div variants={MenuSlideIn} initial='initial' animate='enter' exit='exit' className="fixed z-[70] bg-dark text-zinc-50 dark:text-dark dark:bg-light right-0 bottom-0 h-screen w-screen sm:w-[300px]">
       <div className="box-border h-full flex flex-col justify-between items-center p-4 ">
         <div>
           <p className="pt-20 text-3xl">Navigation</p>

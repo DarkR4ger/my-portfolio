@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Header from '../Header'
 import Footer from '../footer'
-
+import { useEffect } from 'react'
 
 
 const Main = ({ children, className }) => {

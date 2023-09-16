@@ -35,9 +35,9 @@ const TransitionEffect = () => {
       case '/about':
         return 'About'
       case '/projects':
-        return 'projects'
+        return 'Projects'
       case '/contact':
-        return 'contact'
+        return 'Contact'
     }
   }
 

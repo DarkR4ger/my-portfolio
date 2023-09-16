@@ -38,8 +38,8 @@ export default function Skill() {
         <Box src='/python.svg' name='python' index={45} />
         <Box src='/java.svg' name='java' index={50} />
       </div>
-      <div className="mt-20 relative">
-        <Rounded><Link href='/projects' className="relative z-10 font-medium transition duration-300 ">My projects</Link></Rounded>
+      <div className="mt-20 relative md:z[1] z-0 md:text-4xl">
+        <Rounded><Link scroll={false} href='/projects' className="relative z-[1] font-medium transition duration-300 ">My projects</Link></Rounded>
       </div>
     </div>
   )

@@ -61,8 +61,8 @@ export default function About() {
           <p ref={stext} className="absolute left-full top-0 uppercase pr-[50px] m-0">love what you do -</p>
         </div>
       </section>
-      <div className="relative flex items-center justify-center md:mt-[100px]">
-        <Rounded><Link className="relative z-10" href='/about'>About me</Link></Rounded>
+      <div className="relative md:z-[1] z-0 flex items-center justify-center md:mt-[100px] md:text-4xl">
+        <Rounded><Link className="relative z-[1]" href='/about' scroll={false}>About me</Link></Rounded>
       </div>
     </div>
   );

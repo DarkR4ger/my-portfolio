@@ -1,11 +1,16 @@
-import TransitionEffect from '../transition'
 import Head from 'next/head'
+import { useEffect } from 'react';
 
 const Layout = ({ children, title }) => {
   const t = `${title} - Gowtham Saravanan`
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
   return (
     <>
-      <TransitionEffect />
       <main className='container'>
         <Head>
           <title>{t}</title>
