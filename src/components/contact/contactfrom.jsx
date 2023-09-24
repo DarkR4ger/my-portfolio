@@ -32,9 +32,25 @@ export default function ContactForm() {
     return
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     handleError()
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify({
+          name, email, message
+        }),
+        headers: {
+          'Content-type': 'application/json'
+        }
+      })
+      return res.json();
+
+    } catch (err) {
+      console.error("Err", err)
+    }
   }
 
   const validateEmail = (email) => {
