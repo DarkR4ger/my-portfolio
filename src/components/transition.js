@@ -1,8 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ExitSlide, ExitSlideSep, SlideIn, SlideNom } from "./transanim";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router'
 
 function ExitSlideContainer({ index }) {
+
   return (
     <motion.div
       custom={index}
@@ -26,7 +27,7 @@ function SlideContainer({ index }) {
   );
 }
 const TransitionEffect = () => {
-  const router = useRouter()
+  const rout = useRouter()
 
   const title = (r) => {
     switch (r) {
@@ -38,6 +39,8 @@ const TransitionEffect = () => {
         return 'Projects'
       case '/contact':
         return 'Contact'
+      case '/projects/portfolio':
+        return 'Portfolio'
     }
   }
 
@@ -52,7 +55,7 @@ const TransitionEffect = () => {
         <motion.div
           initial={{ y: 0 }}
           animate={{ y: '-100%', opacity: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
-          className="absolute z-[70] text-4xl font-medium bg-gradient-to-b from-light to-dark bg-clip-text text-transparent">{title(router.asPath)}</motion.div>
+          className="absolute z-[70] text-4xl font-medium bg-gradient-to-b from-light to-dark bg-clip-text text-transparent">{title(rout.asPath)}</motion.div>
         <SlideContainer index={2} />
         <SlideContainer index={4} />
         <SlideContainer index={6} />
@@ -66,7 +69,7 @@ const TransitionEffect = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 0.8 } }}
-          className="absolute text-4xl font-medium  z-[70] bg-gradient-to-b from-light to-dark bg-clip-text text-transparent">{title(router.asPath)}</motion.div>
+          className="absolute text-4xl font-medium  z-[70] bg-gradient-to-b from-light to-dark bg-clip-text text-transparent">{title(rout.asPath)}</motion.div>
         <ExitSlideContainer index={2} />
         <ExitSlideContainer index={4} />
         <ExitSlideContainer index={6} />
