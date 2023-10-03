@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Header from '../Header'
 import Footer from '../footer'
-import { useEffect } from 'react'
 
 
 const Main = ({ children, className }) => {
@@ -11,8 +10,11 @@ const Main = ({ children, className }) => {
         <meta name='viewport' content="width=device-width,initial-scale=1" />
         <meta name='description' content="Gowtham's homepage" />
         <meta name='author' content="Gowtham Saravanan" />
-        <meta name='author' content="Dark Rager" />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name='author' content="darkrager" />
+        <meta property='og:site_name' content='Gowtham Saravanan' />
+        <meta name='og:title' content='Gowtham Saravanan' />
+        <meta property='og:type' content='website' />
+
         <title>Gowtham Saravanan - Homepage</title>
       </Head>
       <Header />

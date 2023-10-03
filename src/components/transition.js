@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ExitSlide, ExitSlideSep, SlideIn, SlideNom } from "./transanim";
 import { useRouter } from 'next/router'
 

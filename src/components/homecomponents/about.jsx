@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SlideTextUp from "../slideuptext";
@@ -48,7 +48,7 @@ export default function About() {
       cancelAnimationFrame(animationFrameId.current);
     }
 
-  }, [])
+  }, [animate])
 
 
 
@@ -61,7 +61,7 @@ export default function About() {
           <p ref={stext} className="absolute left-full top-0 uppercase pr-[50px] m-0">love what you do -</p>
         </div>
       </section>
-      <div className="relative md:z-[1] z-0 flex items-center justify-center md:mt-[100px] md:text-4xl mt-[100px]">
+      <div className="relative md:z-[1] z-0 flex items-center justify-center md:mt-[100px] md:text-4xl text-2xl mt-[100px]">
         <Rounded><Link className="relative z-[1]" href='/projects' scroll={false}>My Works</Link></Rounded>
       </div>
     </div>

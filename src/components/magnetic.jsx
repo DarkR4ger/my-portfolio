@@ -19,7 +19,7 @@ export default function Magnetic({ children }) {
       yTo(y * 0.35)
     }
 
-    const mouseLeave = (e) => {
+    const mouseLeave = () => {
       xTo(0)
       yTo(0)
     }

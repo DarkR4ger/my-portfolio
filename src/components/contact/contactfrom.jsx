@@ -104,7 +104,7 @@ export default function ContactForm() {
           </div>
           <div>
             <Rounded>
-              <button type="submit" className="z-[1] md:text-4xl text-2xl">Submit</button>
+              <button type="submit" className="z-2 md:text-4xl text-2xl">Submit</button>
             </Rounded>
           </div>
         </form>

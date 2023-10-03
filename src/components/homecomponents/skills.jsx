@@ -1,4 +1,4 @@
-import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { useRef } from "react"
@@ -35,7 +35,7 @@ export default function Skill() {
         <Box src='/python.svg' name='python' index={45} />
         <Box src='/java.svg' name='java' index={50} />
       </div>
-      <div className="mt-20 relative md:z[1] z-0 md:text-4xl">
+      <div className="mt-20 relative md:z[1] text-2xl z-0 md:text-4xl">
         <Rounded><Link scroll={false} href='/contact' className="relative z-[1] font-medium transition duration-300 ">Get in touch</Link></Rounded>
       </div>
     </div>
