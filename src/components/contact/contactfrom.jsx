@@ -24,19 +24,25 @@ export default function ContactForm() {
   const handleError = () => {
     if (!name) {
       setNameErr("valid Name")
+      return false
     } else setNameErr('')
     if (!email) {
       setEmailErr("Email address")
-    } else if (!validateEmail(email)) setEmailErr("valid Email address")
+      return false
+    } else if (!validateEmail(email)) {
+      setEmailErr("valid Email address")
+      return false
+    }
     else setEmailErr('')
 
-    return
+    return true
   }
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    handleError()
-    setIsSubmitted(true)
+    const valid = handleError()
+    if (valid)
+      setIsSubmitted(true)
     setTimeout(() => {
       setIsSubmitted(false)
     }, 2000)

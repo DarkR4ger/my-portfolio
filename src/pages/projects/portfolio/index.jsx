@@ -8,7 +8,7 @@ const Portfolio = () => {
         <h1 className="text-4xl md:text-6xl text-center text-red-500">Portfolio</h1>
         <div className="mt-[100px] flex flex-col items-center md:flex-row gap-10 w-full">
           <div className="w-[70%]">
-            <p className="text-2xl md:text-4xl text-center md:text-left">A portfolio about me and my projects<span className="ml-2">&#128522;</span></p>
+            <p className="text-2xl md:text-4xl text-center md:text-left">A portfolio about me and my works<span className="ml-2">&#128522;</span></p>
           </div>
           <div className="">
             <Rounded>

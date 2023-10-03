@@ -19,12 +19,9 @@ function Box({ src, name, className, index }) {
 
 export default function Skill() {
   const phrase = "Skills I know"
-
-
-
   return (
-    <div className="mt-[100px] md:mt-0 min-h-screen flex flex-col items-center">
-      <div>
+    <div className="md:mt-[100px] min-h-screen flex flex-col items-center">
+      <div className="mb-10">
         <SlideTextUp phrase={phrase} mul={2} className="text-4xl md:text-7xl text-red-500" />
       </div>
       <div className="md:mt-20 grid grid-cols-2 sm:grid-cols-3  xl:grid-cols-5 gap-5 items-center">
@@ -39,7 +36,7 @@ export default function Skill() {
         <Box src='/java.svg' name='java' index={50} />
       </div>
       <div className="mt-20 relative md:z[1] z-0 md:text-4xl">
-        <Rounded><Link scroll={false} href='/projects' className="relative z-[1] font-medium transition duration-300 ">My projects</Link></Rounded>
+        <Rounded><Link scroll={false} href='/contact' className="relative z-[1] font-medium transition duration-300 ">Get in touch</Link></Rounded>
       </div>
     </div>
   )
