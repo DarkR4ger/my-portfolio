@@ -48,7 +48,7 @@ export default function About() {
       cancelAnimationFrame(animationFrameId.current);
     }
 
-  }, [animate])
+  }, [])
 
 
 
