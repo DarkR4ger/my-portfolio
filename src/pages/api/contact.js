@@ -19,9 +19,12 @@ export default async function handler(req, res) {
     subject: 'New Contact Form!',
     text: `Hello,
 
-    You have a new form entry from: ${name} ${email}.
+    You have a new form entry from: 
+    Name : ${name},
+    Email : ${email}
 
-    ${message}
+    Message:
+      ${message}
 
     `,
   };

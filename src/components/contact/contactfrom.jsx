@@ -102,9 +102,9 @@ export default function ContactForm() {
               maxLength="50"
             ></textarea>
           </div>
-          <div>
+          <div className="relative z-0">
             <Rounded>
-              <button type="submit" className="z-2 md:text-4xl text-2xl">Submit</button>
+              <button type="submit" className="relative z-[1] md:text-4xl text-2xl">Submit</button>
             </Rounded>
           </div>
         </form>
