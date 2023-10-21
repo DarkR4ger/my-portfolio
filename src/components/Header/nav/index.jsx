@@ -59,7 +59,7 @@ export default function Nav({ setIsClicked, mode, setMode }) {
             </Link>
           </Magnetic>
           <Magnetic>
-            <Link target="_blank" href="https://linkedin.com/in/gowtham-saravanan-059b281a1" scroll={false}>
+            <Link target="_blank" href="https://linkedin.com/in/gowtham-s-059b281a1" scroll={false}>
               <Icon icon="line-md:linkedin" className="cursor-pointer" color="#1d9bf0 " />
             </Link>
           </Magnetic>
