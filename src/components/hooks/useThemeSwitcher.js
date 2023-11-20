@@ -1,57 +1,51 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 const useThemeSwitcher = () => {
-
   const preferDarkQuery = "(prefer-color-scheme: dark)";
   const [mode, setMode] = useState("");
 
   useEffect(() => {
-    const mediaQeury = window.matchMedia(preferDarkQuery)
-    const userPref = window.localStorage.getItem('theme')
+    const mediaQeury = window.matchMedia(preferDarkQuery);
+    const userPref = window.localStorage.getItem("theme");
 
     const handleChange = () => {
       if (userPref) {
-        let check = userPref === 'dark' ? 'dark' : 'light';
-        setMode(check)
-        if (check === 'dark') {
-          document.documentElement.classList.add('dark')
+        let check = userPref === "dark" ? "dark" : "light";
+        setMode(check);
+        if (check === "dark") {
+          document.documentElement.classList.add("dark");
         } else {
-          document.documentElement.classList.remove('dark')
+          document.documentElement.classList.remove("dark");
+        }
+      } else {
+        let check = mediaQeury.matches ? "dark" : "light";
+        setMode(check);
+        if (check === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
         }
       }
-      else {
-        let check = mediaQeury.matches ? 'dark' : 'light'
-        setMode(check)
-        if (check === 'dark') {
-          document.documentElement.classList.add('dark')
-        } else {
-          document.documentElement.classList.remove('dark')
-        }
-      }
-    }
+    };
 
     handleChange();
 
-    mediaQeury.addEventListener('change', handleChange)
-    return () => mediaQeury.removeEventListener('change', handleChange)
-  }, [])
+    mediaQeury.addEventListener("change", handleChange);
+    return () => mediaQeury.removeEventListener("change", handleChange);
+  }, []);
 
   useEffect(() => {
-    if (mode === 'dark') {
-      window.localStorage.setItem('theme', 'dark');
-      document.documentElement.classList.add('dark')
+    if (mode === "dark") {
+      window.localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
     }
-    if (mode === 'light') {
-      window.localStorage.setItem('theme', 'light');
-      document.documentElement.classList.remove('dark')
+    if (mode === "light") {
+      window.localStorage.setItem("theme", "light");
+      document.documentElement.classList.remove("dark");
     }
+  }, [mode]);
 
-  }, [mode])
+  return [mode, setMode];
+};
 
-  return [mode, setMode]
-
-}
-
-export default useThemeSwitcher
-
-
+export default useThemeSwitcher;
