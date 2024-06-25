@@ -12,7 +12,7 @@ const Portfolio = () => {
           </div>
           <div className="">
             <Rounded>
-              <Link href="/" target="_blank" scroll={false} className="md:text-4xl text-2xl z-[1]" >Live Site <span className="md:ml-2 md:text-2xl">&#8599;</span></Link>
+              <Link aria-disabled={true} href="/" target="_blank" scroll={false} className="md:text-4xl text-2xl z-[1]" >Live Site <span className="md:ml-2 md:text-2xl">&#8599;</span></Link>
             </Rounded>
           </div>
         </div>

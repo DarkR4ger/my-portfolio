@@ -4,6 +4,7 @@ import { WorkGridItem } from "@/components/grid-items";
 
 
 import thumbPortfolio from '../../../public/projects/portfolio.png'
+import thumbBmsClone from '../../../public/projects/bmsclone.png'
 
 export default function Works() {
   return (
@@ -13,6 +14,9 @@ export default function Works() {
         <div className="mt-[100px] grid md:grid-cols-2 h-full w-full gap-6">
           <WorkGridItem id='portfolio' title="Portfolio" thumbnail={thumbPortfolio}>
             A portfolio which forcases about me and my works
+          </WorkGridItem>
+          <WorkGridItem id='bmsclone' title="Online Movie Booking Platform" thumbnail={thumbBmsClone}>
+            A online movie ticket booking plateform
           </WorkGridItem>
         </div>
       </div>
