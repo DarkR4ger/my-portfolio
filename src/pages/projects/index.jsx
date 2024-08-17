@@ -15,7 +15,7 @@ export default function Works() {
           <WorkGridItem id='portfolio' title="Portfolio" thumbnail={thumbPortfolio}>
             A portfolio which forcases about me and my works
           </WorkGridItem>
-          <WorkGridItem id='bmsclone' title="Online Movie Booking Platform" thumbnail={thumbBmsClone}>
+          <WorkGridItem id='bmsclone' title="BMS-Clone" thumbnail={thumbBmsClone}>
             A online movie ticket booking plateform
           </WorkGridItem>
         </div>
