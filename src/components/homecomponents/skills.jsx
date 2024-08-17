@@ -34,6 +34,10 @@ export default function Skill() {
         <Box src='/nextjs-solid.svg' name='next js' index={40} />
         <Box src='/python.svg' name='python' index={45} />
         <Box src='/java.svg' name='java' index={50} />
+        <Box src='/typescript.svg' name='typescript' index={55} />
+        <Box src='/mongodb.svg' name='mongodb' index={55} />
+        <Box src='/prisma.svg' name='prisma' index={55} />
+        <Box src='/framer-motion.svg' name='framer motion' index={55} />
       </div>
       <div className="mt-20 relative md:z[1] text-2xl z-0 md:text-4xl">
         <Rounded><Link scroll={false} href='/contact' className="relative z-[1] font-medium transition duration-300 ">Get in touch</Link></Rounded>
