@@ -54,7 +54,7 @@ export default function Nav({ setIsClicked, mode, setMode }) {
             </Link>
           </Magnetic>
           <Magnetic>
-            <Link target="_blank" href="https://github.com/DarkR4ger" scroll={false}>
+            <Link target="_blank" href="https://github.com/Gowth4m-S" scroll={false}>
               <Icon icon="line-md:github-twotone" className="cursor-pointer" color="red" />
             </Link>
           </Magnetic>
